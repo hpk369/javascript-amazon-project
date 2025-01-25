@@ -82,6 +82,7 @@ object3.method();
 export let products = [];
 
 export function loadProductsFetch() {
+  console.log('load products');
   const promise = fetch(
     'https://supersimplebackend.dev/products'
   ).then((response) => {
@@ -93,14 +94,12 @@ export function loadProductsFetch() {
       }
       return new Product(productDetails);
     });
-
-    console.log('load products');
   });
 
   return promise;
 }
 loadProductsFetch().then(() => {
-  console.log('next step');
+  //console.log('next step');
 });
 
 /*
